@@ -1,0 +1,310 @@
+
+    /* Base Reset & Variables */
+    :root {
+        --bg-color: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.4);
+        --card-border: rgba(51, 65, 85, 0.5);
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --accent-gradient: linear-gradient(90deg, #60a5fa, #818cf8, #c084fc);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.5;
+        padding: 3rem 1rem;
+    }
+
+    /* Layout Structure */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    header h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        letter-spacing: -0.025em;
+    }
+
+    header p {
+        color: var(--text-secondary);
+        font-size: 1.125rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    /* Card Component */
+    .card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card:hover {
+        background: rgba(30, 41, 59, 0.6);
+        border-color: rgba(71, 85, 105, 1);
+        transform: translateY(-4px);
+    }
+
+    .button-wrapper {
+        min-h: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+
+    .card h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #f8fafc;
+    }
+
+    .card p {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        max-width: 220px;
+    }
+
+    /* General Button Reset */
+    button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+    }
+
+    /* 1. Flat Minimal */
+    .btn-flat {
+        background-color: #4f46e5;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+    }
+    .btn-flat:hover {
+        background-color: #4338ca;
+    }
+    .btn-flat:active {
+        transform: scale(0.95);
+    }
+
+    /* 2. Sunset Gradient */
+    .btn-gradient {
+        background: linear-gradient(to right, #f43f5e, #f59e0b);
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+    }
+    .btn-gradient:hover {
+        box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+    }
+
+    /* 3. Neon Cyber */
+    .btn-neon {
+        background: transparent;
+        border: 2px solid #22d3ee;
+        color: #22d3ee;
+        padding: 0.75rem 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border-radius: 0.25rem;
+    }
+    .btn-neon:hover {
+        background: #22d3ee;
+        color: #0f172a;
+        box-shadow: 0 0 15px #22d3ee, 0 0 30px #22d3ee;
+    }
+
+    /* 4. Glassmorphism */
+    .btn-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 500;
+    }
+    .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* 5. 3D Tactile */
+    .btn-3d {
+        background-color: #2563eb;
+        color: white;
+        padding: 0.75rem 2rem;
+        font-weight: 700;
+        border-radius: 0.5rem;
+        border-bottom: 4px solid #1e40af;
+        position: relative;
+    }
+    .btn-3d:hover {
+        transform: translateY(2px);
+        border-bottom-width: 2px;
+    }
+    .btn-3d:active {
+        transform: translateY(4px);
+        border-bottom-width: 0px;
+    }
+
+    /* 6. Modern Outline */
+    .btn-outline {
+        background: transparent;
+        border: 2px solid #cbd5e1;
+        color: #cbd5e1;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+    }
+    .btn-outline:hover {
+        background: #cbd5e1;
+        color: #0f172a;
+    }
+
+    /* 7. Animated Icon */
+    .btn-icon {
+        background-color: #f1f5f9;
+        color: #0f172a;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .btn-icon i {
+        transition: transform 0.3s ease;
+    }
+    .btn-icon:hover i {
+        transform: translateX(5px);
+    }
+
+    /* 8. Neumorphism */
+    .btn-neu {
+        background: #0f172a;
+        color: #94a3b8;
+        padding: 0.75rem 2rem;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        box-shadow: 5px 5px 10px #060a12, -5px -5px 10px #182442;
+    }
+    .btn-neu:hover {
+        box-shadow: inset 5px 5px 10px #060a12, inset -5px -5px 10px #182442;
+    }
+
+    /* 9. Brutalist Retro */
+    .btn-brutalist {
+        background-color: #facc15;
+        color: black;
+        padding: 0.75rem 2rem;
+        border: 4px solid black;
+        font-weight: 900;
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    }
+    .btn-brutalist:hover {
+        box-shadow: none;
+        transform: translate(3px, 3px);
+    }
+
+    /* 10. Shimmer Effect */
+    .btn-shimmer {
+        background-color: #1e293b;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-shimmer::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transform: skewX(-25deg);
+    }
+    .btn-shimmer:hover::after {
+        animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+        100% { left: 200%; }
+    }
+
+    /* 11. Cyber Skew */
+    .btn-skew {
+        background-color: #d946ef;
+        color: white;
+        padding: 0.75rem 2rem;
+        font-weight: 700;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+        transform: skewX(-15deg);
+    }
+    .btn-skew:hover {
+        transform: skewX(0deg);
+    }
+
+    /* 12. Ghost Blur */
+    .btn-ghost {
+        background: transparent;
+        color: #34d399;
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+    }
+    .btn-ghost:hover {
+        background: rgba(52, 211, 153, 0.1);
+        box-shadow: 0 0 30px rgba(52, 211, 153, 0.3);
+    }
+
+    footer {
+        margin-top: 5rem;
+        padding-top: 2rem;
+        border-top: 1px solid #1e293b;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.875rem;
+    }
